@@ -14,7 +14,7 @@ function storeFind(){
         
         addSearchBar: (selector,placeholder)=>{
             var searchbar = "<input type='text' id='searchInput' placeholder='"+placeholder+"' name='search'>" +
-                            "<button class='searchButton' type='submit' onclick='storeFind().sortStores()'><img width='10px' height='10px' src='searchIcon.png'></button>"
+                            "<button class='searchButton' type='submit' onclick='storeFind().sortStores()'><img width='10px' height='10px' src='images/searchIcon.png'></button>"
             $(selector).append(searchbar)
         },
 
@@ -53,7 +53,7 @@ function storeFind(){
         },
 
         createTable: (selector)=>{
-            var table ="<table><tr><th><h3>Store</h3></th><th><h3>Location</h3></th><th><h3>Distance From You</h3></th><th><h3>Link to Store</h3></th></tr>"
+            var table ="<table><tr><th><h3>Store</h3></th><th><h3>Location</h3></th><th><h3>Distance From You</h3></th><th><h3>Directions</h3></th></tr>"
             for(var i = 0; i<stores.length; i++){
                 var link = "onclick=\"location.href='https://www.google.com/maps/search/"+stores[i].location+"'\""
                 table = table + "<tr> <td><b>" +stores[i].name+ "</b></td>" + 

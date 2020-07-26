@@ -1,0 +1,22 @@
+{
+  "name": "js-library-moazmuha",
+  "version": "1.0.0",
+  "description": "Storefind jslibrary",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc309-summer-2020/js-library-moazmuha.git"
+  },
+  "author": "Muhammad Moaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc309-summer-2020/js-library-moazmuha/issues"
+  },
+  "homepage": "https://github.com/csc309-summer-2020/js-library-moazmuha#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
