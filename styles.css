@@ -1,0 +1,106 @@
+/* Styles for examples.js */
+
+  h1 {
+    font-size: xx-large;
+    color: darkblue;
+    text-align: center;
+    text-decoration: blue underline;
+    text-shadow: 2px 2px 5px blue;
+  }
+
+  h2,h3 {
+    color: darkblue;
+    text-align: left;
+    text-shadow: 2px 2px 5px blue;
+  }
+  
+  body {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-image: url("./background.jpg");
+  }
+
+
+  #round-container {
+    border-radius: 25px;
+    background:lightblue;
+    padding: 15px; 
+    width: 300px;
+    height: auto;
+    text-align: left;
+    /* border: 15px solid green;   */
+  }
+
+  #round-container2 {
+    border-radius: 25px;
+    background:lightblue;
+    padding: 15px; 
+    width: auto;
+    height: auto;
+    text-align: left;
+    /* border: 15px solid green;   */
+  }
+
+  /* button{
+    display: inline-block;
+    padding: 10px 10px;
+    margin-left: 5px;
+    cursor: progress;
+    text-align: center;
+    outline: none;
+    color: darkblue;
+    background-color: rgb(67, 163, 196);
+    border: none;
+    border-radius: 50;
+    box-shadow: 0 9px grey;
+  }
+  
+  button:hover {background-color:darkcyan}
+  
+  button:active {
+    background-color: darkcyan;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  } */
+
+  table {
+    width: 100%;
+    background-color: rgb(0, 191, 255);
+    color: black;
+  }
+  
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+  }
+
+  tr, th{
+    border-bottom: 1px solid black;
+  }
+  
+  tr:hover {background-color: rgb(62, 179, 218);}
+  th:hover {background-color: rgb(62, 179, 218);}
+  
+  .bookButton {
+    background-color: rgb(6, 6, 56); /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.s;
+    cursor: pointer;
+  }
+
+  .bookButton:hover {
+    background-color: red;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  
