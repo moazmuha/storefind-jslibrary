@@ -1,2 +1,2 @@
 # js-library-moazmuha
-Heroku URL: https://storefindjs.herokuapp.com/
+Heroku URL to landing page: https://storefindjs.herokuapp.com/
