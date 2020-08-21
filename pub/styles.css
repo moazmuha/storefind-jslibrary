@@ -42,28 +42,6 @@
     /* border: 15px solid green;   */
   }
 
-  /* button{
-    display: inline-block;
-    padding: 10px 10px;
-    margin-left: 5px;
-    cursor: progress;
-    text-align: center;
-    outline: none;
-    color: darkblue;
-    background-color: rgb(67, 163, 196);
-    border: none;
-    border-radius: 50;
-    box-shadow: 0 9px grey;
-  }
-  
-  button:hover {background-color:darkcyan}
-  
-  button:active {
-    background-color: darkcyan;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  } */
-
   table {
     width: 100%;
     background-color: rgb(0, 191, 255);
@@ -99,8 +77,6 @@
   .bookButton:hover {
     background-color: red;
     color: black;
-    font-weight: bold;
-    font-size: 20px;
   }
 
   
