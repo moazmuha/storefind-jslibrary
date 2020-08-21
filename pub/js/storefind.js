@@ -5,6 +5,7 @@ log("storefind.js")
 var stores = []
 var tableDiv = "body"
 var postalCode
+var click = false;
 
 
 function storeFind(){
@@ -30,6 +31,8 @@ function storeFind(){
         
 
         sortStores: ()=>{
+            if (!click){
+            click = true
             async function getLatLng(){
                 let lat
                 let lng
@@ -70,6 +73,7 @@ function storeFind(){
                 self.createTable(tableDiv)
             }
             getLatLng()
+            }
         },
 
         setDivForTable: (div)=>{
