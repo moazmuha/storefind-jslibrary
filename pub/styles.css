@@ -92,7 +92,7 @@
     color: black;
   }
 
-  p{
+  p, dl, dt{
     color: darkblue;
     text-align: left;
     font-weight: bold;

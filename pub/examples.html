@@ -65,8 +65,37 @@
          our styles file.
       </p>
       <h3>Functions and API</h3>
+      <!-- storeFind().addStore("The Home Depot Oakville","2555 Bristol Cir, Oakville, ON", "L6H 5W9")
+storeFind().addStore("The Home Depot Milton","1013 Maple Ave, Milton, ON", "L9T 0A5")
+storeFind().addStore("The Home Depot Mississauga","2920 Argentia Rd, Mississauga, ON", "L5N 7X8")
+storeFind().addStore("The Home Depot Toronto","2121 St Clair Ave W, Toronto", "M6N 4X9")
+storeFind().addSearchBar("#round-container", "Enter Postal Code")
+storeFind().setDivForTable("#round-container2") -->
       <p>
-         There are only 3 fucntions a user of storeFind library accessess. They are 
+         There are only 3 fucntions a user of storeFind library accessess. They are
+         <dl>
+            <dt>addStore()</dt>
+            <dd>This function takes in 3 strings: Store Name, Store Address and Postal Code.
+               This function creates store objects which are used in the table when a customer
+               searches for stores close to them.
+            </dd>
+            <dt>addSearchBar()</dt>
+            <dd>This function takes in 2 strings. The first is the div id of where you want to place
+               the search bar. The 2nd string is the placeholder that you would like for the input feild
+               of the search bar. This function creates a search bar and search button. The search button, when
+               clicked is set to call sortStores() a private function users don't directly use. The sortStores()
+               function sorts the stores that you added using addStore() by ascending distance from the postal 
+               code that was inputted into the search bar. sortStores() then calls another private function 
+               called createTable() this function actually creates the table of sorted stores with columns
+               Name, Location, Distance From You, and Directions. The directions column will hold a button that
+               redirects customers to google maps with the address of the location inputted into google maps.
+            </dd>
+            <dt>setDivForTable()</dt>
+            <dd>
+               This Function takes in one string. It takes in the div id of where you want to place the table 
+               on your page when the search button is clicked. 
+            </dd>
+          </dl>
       </p>
     </div>
 
