@@ -37,7 +37,7 @@ function storeFind(){
                 let lat
                 let lng
                 postalCode = $("#searchInput").val()
-                let url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + postalCode + "&key=AIzaSyBoz1HmaGdnspMXq5Re5u8Qg5cK2qDN_rE"
+                let url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + postalCode + "&key=INSERT_YOUR_GOOGLE_API_KEY"
                 let response = await fetch(url)
                 let data = await response.json()
                 if(data.results[0]){
@@ -51,7 +51,7 @@ function storeFind(){
                 let lng2
                 let url2
                 for(var i = 0; i<stores.length; i++){
-                    url2 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + stores[i].postalCode + "&key=AIzaSyBoz1HmaGdnspMXq5Re5u8Qg5cK2qDN_rE"
+                    url2 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + stores[i].postalCode + "&key=INSERT_YOUR_GOOGLE_API_KEY"
                     let response2 = await fetch(url2)
                     let data2 = await response2.json()
                     if(data2.results[0]){
