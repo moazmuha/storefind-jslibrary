@@ -3,13 +3,15 @@
 const log = console.log
 
 const express = require("express")
+var path = require('path');
 const app = express()
 
 app.use(express.static(__dirname + '/pub'))
 
 app.get("/", function (req, res) {
-    res.send("<h1>storeFind.js!</h1>")
-  })
+    // res.send("<h1>storeFind.js!</h1>")
+    res.sendFile(path.join(__dirname + '/pub/examples.html'));
+})
 
 app.listen(process.env.PORT || 9000, 
 	() => console.log("Server is running..."));
