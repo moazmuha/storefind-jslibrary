@@ -1,5 +1,5 @@
-# js-library-moazmuha
-Heroku URL to landing page: https://storefindjs.herokuapp.com/examples.html
+# StoreFind Library
+Heroku URL to landing page: https://storefindjs.herokuapp.com/examples.html (Might not work, Google API Key may have expired)
 Link to documentation: Bottom of: https://storefindjs.herokuapp.com/examples.html 
 
 Getting Started:

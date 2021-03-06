@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/csc309-summer-2020/js-library-moazmuha.git"
+    "url": "git+https://github.com/moazmuha/storefind-jslibrary.git"
   },
   "author": "Muhammad Moaz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/csc309-summer-2020/js-library-moazmuha/issues"
+    "url": "https://github.com/moazmuha/storefind-jslibrary.git/issues"
   },
-  "homepage": "https://github.com/csc309-summer-2020/js-library-moazmuha#readme",
+  "homepage": "https://github.com/moazmuha/storefind-jslibrary.git#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
