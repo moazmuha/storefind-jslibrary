@@ -2,6 +2,10 @@
 Heroku URL to landing page: https://storefindjs.herokuapp.com/examples.html (Might not work, Google API Key may have expired)
 Link to documentation: Bottom of: https://storefindjs.herokuapp.com/examples.html 
 
+•JavaScript library that can be used to find locations close to you <br>
+•Similar to ’find closest store/location to you’ tool found on websites of businesses with multiple branches. <br>
+•Provided a location the JavaScript library finds the closest locations to you from a set of locations.<br>
+
 Getting Started:
 To get started you will need to include the storefind.js script in your file. However, storefind.js 
 uses jquery so you must first have the jquery script tag. You can simply provide the follwing 
