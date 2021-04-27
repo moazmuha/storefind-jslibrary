@@ -7,5 +7,8 @@
 1.[Getting Started](#Guide) <br>
 
 
-Guide:
+## Guide
 1. Download the repo.
+2. Run "npm install" to install node_modules
+3. Run "npm start"
+4. Head over to 
