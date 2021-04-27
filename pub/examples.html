@@ -54,6 +54,22 @@
          takes care of constructing everything for you. You can do the same thing but with your businesses' locations.
        </p>
     </div>
+    <div id= "round-container">
+      <h2>Try it out!</h2>
+      <p>
+         Enter a valid postal code, city, or address and use the slider to select the range to search within. Once you hit the 
+         search icon you should see the Home Depot locations sorted in ascending distance from your location. You may go add your
+         own locations in examples.js to test the storefinder further. A Google Maps API key is used to find a specified location's 
+         latitude and longitude so distance can be calculated. The API key
+         that is used in storefind.js is restricted and so you may occasionaly receive a "Not a Valid location" error even when inputting 
+         a valid location. This is to stop users
+         from spamming. Just retry the same location again and it should work. If you would like you can replace the API key in storefind.js
+         with your own. Look for "replace API key below" comments to know where to replace the key with your own.
+        <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Click here</a> for
+         instructions on how to get and use Google API keys.
+      </p>
+   </div>
+   <div id = "round-container2"></div>
     <div class = "myround-container">
       <h2>Documentation</h2>
       <h3>Getting Started</h3>
@@ -62,9 +78,6 @@
          uses jquery so you must first have the jquery script tag. You can simply provide the following script: 
          script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" for jquery. You may use your 
          own styles. If you would like to use the styles of the table in our example you can use our styles file. 
-         <!-- You will need to replace all occurrences of "INSERT_YOUR_GOOGLE_API_KEY" in storefind.js with a valid Google Maps API key or you will always get 
-         "Not a Valid Postal Code" error. <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Click here</a> for
-         instructions on how to get and use Google API keys. -->
       </p>
       <h3>Functions and API</h3>
       <p>
@@ -96,15 +109,6 @@
           </dl>
       </p>
     </div>
-    <div id= "round-container">
-       <h2>Try it out!</h2>
-       <p>
-          Enter a valid postal code, city, or address and use the slider to select the range to search within. Once you hit the 
-          search icon you should see the Home Depot locations sorted in ascending distance from your location. You may go add your
-          own locations in examples.js to test the storefinder further.
-       </p>
-    </div>
-    <div id = "round-container2"></div>
 
 
  </body>

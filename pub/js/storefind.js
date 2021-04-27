@@ -48,6 +48,7 @@ function storeFind(){
                 let lat
                 let lng
                 postalCode = $("#searchInput").val()
+                // replace API key below
                 let url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + postalCode + "&key=AIzaSyBoz1HmaGdnspMXq5Re5u8Qg5cK2qDN_rE"
                 let response = await fetch(url)
                 let data = await response.json()
@@ -55,13 +56,14 @@ function storeFind(){
                     lat = data.results[0].geometry.location.lat
                     lng = data.results[0].geometry.location.lng
                 }else{
-                    alert("Not a Valid Postal Code")
+                    alert("Not a Valid Location")
                     window.location.reload()
                 }
                 let lat2
                 let lng2
                 let url2
                 for(var i = 0; i<stores.length; i++){
+                    // replace API key below
                     url2 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + stores[i].postalCode + "&key=AIzaSyBoz1HmaGdnspMXq5Re5u8Qg5cK2qDN_rE"
                     let response2 = await fetch(url2)
                     let data2 = await response2.json()
@@ -69,7 +71,7 @@ function storeFind(){
                         lat2 = data2.results[0].geometry.location.lat
                         lng2 = data2.results[0].geometry.location.lng
                     }else{
-                        alert("Not a Valid Postal Code")
+                        alert("Not a Valid Location")
                         window.location.reload()
                     }
                     stores[i].distance = self.distance(lat, lng, lat2, lng2, "K")
