@@ -1,17 +1,15 @@
 /* Styles for examples.js */
-
   h1 {
     font-size: xx-large;
     color: darkblue;
     text-align: center;
     text-decoration: blue underline;
-    text-shadow: 2px 2px 5px blue;
   }
 
   h2,h3,h4 {
     color: darkblue;
     text-align: left;
-    text-shadow: 2px 2px 5px blue;
+    text-decoration: blue underline;
   }
   
   body {
@@ -23,36 +21,35 @@
 
 
   #round-container {
-    border-radius: 25px;
     background:lightblue;
-    padding: 15px; 
+    padding: 15px;
+    height: auto;
+    text-align: left;
+    margin: 10px;
+  }
+
+  #sp {
+    background:lightblue; 
     width: 300px;
     height: auto;
     text-align: left;
-    margin: 10px;
-    /* border: 15px solid green;   */
   }
 
   #round-container2 {
-    border-radius: 25px;
-    background:lightblue;
-    padding: 15px; 
+    background-color: rgb(188, 188, 212);
     width: auto;
     height: auto;
     text-align: left;
     margin: 10px;
-    /* border: 15px solid green;   */
   }
 
   .myround-container {
-    border-radius: 25px;
     background:lightblue;
     padding: 15px; 
     width: auto;
     height: auto;
     text-align: left;
     margin: 10px;
-    /* border: 15px solid green;   */
   }
 
   table {
@@ -93,9 +90,13 @@
   }
 
   p, dl, dt{
-    color: darkblue;
     text-align: left;
     font-weight: bold;
+    
   }
 
+  #specialP {
+    margin: 0;
+    padding: 0;
+  }
   

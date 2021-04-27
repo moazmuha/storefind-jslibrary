@@ -5,6 +5,7 @@ log("storefind.js")
 var stores = []
 var tableDiv = "body"
 var postalCode
+var sliderValue = 50;
 var click = false;
 
 
@@ -16,6 +17,16 @@ function storeFind(){
             var searchbar = "<input type='text' id='searchInput' placeholder='"+placeholder+"' name='search'>" +
                             "<button class='searchButton' type='submit' onclick='storeFind().sortStores()'><img width='10px' height='10px' src='images/searchIcon.png'></button>"
             $(selector).append(searchbar)
+            // slider borrowed from w3schools
+            var slider  = '<div id="sp"><input type="range" min="1" max="100" value="50" class="slider" id="myRange"><p id="specialP">Search Within: <span id="demo"></span> km</p></div>'
+            $(selector).append(slider)
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+                sliderValue = this.value
+            }
         },
 
 
@@ -37,28 +48,28 @@ function storeFind(){
                 let lat
                 let lng
                 postalCode = $("#searchInput").val()
-                let url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + postalCode + "&key=INSERT_YOUR_GOOGLE_API_KEY"
+                let url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + postalCode + "&key=AIzaSyBoz1HmaGdnspMXq5Re5u8Qg5cK2qDN_rE"
                 let response = await fetch(url)
                 let data = await response.json()
                 if(data.results[0]){
                     lat = data.results[0].geometry.location.lat
                     lng = data.results[0].geometry.location.lng
                 }else{
-                    alert("Not a Valid Postal Code or API Key Invalid")
+                    alert("Not a Valid Postal Code")
                     window.location.reload()
                 }
                 let lat2
                 let lng2
                 let url2
                 for(var i = 0; i<stores.length; i++){
-                    url2 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + stores[i].postalCode + "&key=INSERT_YOUR_GOOGLE_API_KEY"
+                    url2 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + stores[i].postalCode + "&key=AIzaSyBoz1HmaGdnspMXq5Re5u8Qg5cK2qDN_rE"
                     let response2 = await fetch(url2)
                     let data2 = await response2.json()
                     if(data2.results[0]){
                         lat2 = data2.results[0].geometry.location.lat
                         lng2 = data2.results[0].geometry.location.lng
                     }else{
-                        alert("Not a Valid Postal Code or API Key Invalid")
+                        alert("Not a Valid Postal Code")
                         window.location.reload()
                     }
                     stores[i].distance = self.distance(lat, lng, lat2, lng2, "K")
@@ -71,6 +82,11 @@ function storeFind(){
                     }
                     return 0
                 })
+                for(var i = 0; i<stores.length; i++){
+                    if (stores[i].distance > sliderValue){
+                        stores.splice(i)
+                    }
+                }
 
                 self.createTable(tableDiv)
             }
@@ -83,19 +99,28 @@ function storeFind(){
         },
 
         createTable: (selector)=>{
-            var table ="<table><tr><th><h3>Store</h3></th><th><h3>Location</h3></th><th><h3>Distance From You</h3></th><th><h3>Directions</h3></th></tr>"
-            for(var i = 0; i<stores.length; i++){
-                var link = "onclick=\"location.href='https://www.google.com/maps/search/"+stores[i].location+"'\""
-                table = table + "<tr> <td><b>" +stores[i].name+ "</b></td>" + 
-                "<td>"+stores[i].location+"</td><td>"+ Math.round(stores[i].distance * 10) / 10 +" Km</td>" +
-                "<td><button class='bookButton'" +  link + ">Directions</button></td></tr>"
+            if (stores.length>0){
+                var table ="<table><tr><th><h3>Store</h3></th><th><h3>Location</h3></th><th><h3>Distance From You</h3></th><th><h3>Directions</h3></th></tr>"
+                for(var i = 0; i<stores.length; i++){
+                    var link = "onclick=\"window.open('https://www.google.com/maps/search/"+stores[i].location+"', '_blank')\""
+                    table = table + "<tr> <td><b>" +stores[i].name+ "</b></td>" + 
+                    "<td>"+stores[i].location+"</td><td>"+ Math.round(stores[i].distance * 10) / 10 +" Km</td>" +
+                    "<td><button class='bookButton'" +  link + ">Directions</button></td></tr>"
+                }
+                table = table + "</table>"
+                $(selector).append("<h2>Stores Close to You:</h2>").hide().show(300)
+                $(selector).append(table).hide().show(300)
+                var searchAgain = "<button class='bookButton' onclick='window.location.reload()'>Search Again</button>"
+                $(selector).append(searchAgain).hide().show(300)
+                $("#round-container").hide(300)
+            }else{
+                var error = "<h2 style='text-decoration: none'>Sorry, no clinics were found with your search criteria :(</h2>"
+                $(selector).append(error).hide().show(300)
+                var searchAgain = "<button class='bookButton' onclick='window.location.reload()'>Search Again</button>"
+                $(selector).append(searchAgain).hide().show(300)
+                $("#round-container").hide(300)
             }
-            table = table + "</table>"
-            $(selector).append("<h2>Stores Close to You:</h2>").hide().show(300)
-            $(selector).append(table).hide().show(300)
-            var searchAgain = "<button class='bookButton' onclick='window.location.reload()'>Search Again</button>"
-            $(selector).append(searchAgain).hide().show(300)
-            $("#round-container").hide(300)
+            
         },
 
         //distance function from https://www.geodatasource.com/developers/javascript
@@ -119,7 +144,7 @@ function storeFind(){
                 if (unit=="N") { dist = dist * 0.8684 }
                 return dist;
             }
-}
+        }
 
 
     }

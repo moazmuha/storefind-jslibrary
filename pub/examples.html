@@ -20,7 +20,8 @@
     <h1>Storefind Library</h1>
     <div class = "myround-container">
        <h2>Welcome to The Storefind Library</h2>
-       <p>  This library is useful for any business that has many branches. It will allow you to create a
+       <p>  
+          This library is useful for any business that has many branches. It will allow you to create a
           storefinder tool on your web app or website. This will allow your customers to quickly find the 
           closest branch of your business to them. Your developers can focus on more important aspects of 
           your application and simply use the Storefind JS lbrary to add a "stores near you" page on your 
@@ -28,76 +29,82 @@
        </p>
        <p>
           You simply import the Storefind library. Then use our addStore() function to add the store locations
-          you would like to add. The code you will use is "storeFind().addStore("STORE NAME","STORE ADDRESS", "POSTAL CODE")"
+          you would like to add. The code you will use is "storeFind().addStore('STORE NAME','STORE ADDRESS', 'POSTAL CODE')"
           As you can see in the example, in the function you will specify the store or branch name, its address and also 
           its postal code. You can add as many stores as you like. Once you have added all the stores,
-          you will use the fucntion addSearchBar(). Here is an example "storeFind().addSearchBar("DIV-ID", "PLACEHOLDER").
-          addSearchBar() takes in the div id that you want to display the search bar within on your page and
-          the placeholder for the the input feild of the search bar. This is the search bar that your customers 
-          will use. They will input their postal code or address and our library will create and display a table with your
-          store or branch locations sorted by ascending distnace from the customer. You may use the function 
-          storeFind().setDivForTable("DIV-ID") to set the div for where you want the table of locations to be displayed.
+          you will use the function addSearchBar(). Here is an example, "storeFind().addSearchBar('DIV-ID', 'PLACEHOLDER').
+          addSearchBar()" takes in the div id that you want to display the search bar within on your page and
+          the placeholder for the input feild of the search bar. This is the search bar that your customers 
+          will use. They will input their postal code, address, or city and also 
+          the range to search within. Our library will create and display a table with your
+          store or branch locations sorted by ascending distance from the customer. You may use the function 
+          storeFind().setDivForTable('DIV-ID') to set the div for where you want the table of locations to be displayed.
           The table will have the columns: store name, location, distance from you, and directions. The directions 
-          column will hold a button which links to google maps with the repective stores location. The other columns
-          are self explanitory.
+          column will hold a button that links to google maps with the repective stores location. The other columns
+          are self explanatory.
        </p>
        <p>
           Below I created an example with the following code: 
        </p>
        <img src="images/code.png" >
        <p>
-          You can enter a valid postal code into the search bar below and hit the search button. When you 
-          do the home depot locations that were added will be sorted accroding to thier distance from you 
-          (the postal code you entered.) All this is done with the few lines of simple code above. The library
-          takes care of constructing everything for you. You can do the same thing but with your businesses' locations.
+         You can enter a valid postal code into the search bar below and hit the search button. When you 
+         do the home depot locations that were added will be sorted according to their distance from you 
+         (the postal code you entered.) All this is done with the few lines of simple code above. The library 
+         takes care of constructing everything for you. You can do the same thing but with your businesses' locations.
        </p>
     </div>
-    <div id= "round-container"></div>
-    <div id = "round-container2"></div>
     <div class = "myround-container">
       <h2>Documentation</h2>
       <h3>Getting Started</h3>
       <p>
          To get started you will need to include the storefind.js script in your file. However, storefind.js 
-         uses jquery so you must first have the jquery script tag. You can simply provide the follwing 
-         script: script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js for jquery. You
-         may use your own styles. If you would like to use the styles of the table in our example you can use
-         our styles file.
+         uses jquery so you must first have the jquery script tag. You can simply provide the following script: 
+         script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" for jquery. You may use your 
+         own styles. If you would like to use the styles of the table in our example you can use our styles file. 
+         <!-- You will need to replace all occurrences of "INSERT_YOUR_GOOGLE_API_KEY" in storefind.js with a valid Google Maps API key or you will always get 
+         "Not a Valid Postal Code" error. <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Click here</a> for
+         instructions on how to get and use Google API keys. -->
       </p>
       <h3>Functions and API</h3>
-      <!-- storeFind().addStore("The Home Depot Oakville","2555 Bristol Cir, Oakville, ON", "L6H 5W9")
-storeFind().addStore("The Home Depot Milton","1013 Maple Ave, Milton, ON", "L9T 0A5")
-storeFind().addStore("The Home Depot Mississauga","2920 Argentia Rd, Mississauga, ON", "L5N 7X8")
-storeFind().addStore("The Home Depot Toronto","2121 St Clair Ave W, Toronto", "M6N 4X9")
-storeFind().addSearchBar("#round-container", "Enter Postal Code")
-storeFind().setDivForTable("#round-container2") -->
       <p>
-         There are only 3 fucntions a user of storeFind library accessess. They are
+         There are only 3 functions a user of storeFind library accessess. They are:
          <dl>
             <dt>addStore()</dt>
-            <dd>This function takes in 3 strings: Store Name, Store Address and Postal Code.
-               This function creates store objects which are used in the table when a customer
-               searches for stores close to them.
-            </dd>
+               <dd>
+                  This function takes in 3 strings: Store Name, Store Address, and Postal Code.
+                  This function creates store objects which are used in the table when a customer
+                  searches for stores close to them.
+               </dd>
             <dt>addSearchBar()</dt>
-            <dd>This function takes in 2 strings. The first is the div id of where you want to place
-               the search bar. The 2nd string is the placeholder that you would like for the input feild
-               of the search bar. This function creates a search bar and search button. The search button, when
-               clicked is set to call sortStores() a private function users don't directly use. The sortStores()
-               function sorts the stores that you added using addStore() by ascending distance from the postal 
-               code that was inputted into the search bar. sortStores() then calls another private function 
-               called createTable() this function actually creates the table of sorted stores with columns
-               Name, Location, Distance From You, and Directions. The directions column will hold a button that
-               redirects customers to google maps with the address of the location inputted into google maps.
-            </dd>
+               <dd>
+                  This function takes in 2 strings. The first is the div id of where you want to place the search bar. 
+                  The 2nd string is the placeholder that you would like for the input field of the search bar. 
+                  This function creates a search bar and search button. The search button, when clicked is set to call 
+                  sortStores() private function users don't directly use. The sortStores()
+                  function sorts the stores that you added using addStore() by ascending distance from the postal 
+                  code that was inputted into the search bar. sortStores() then calls another private function 
+                  called createTable() this function actually creates the table of sorted stores with columns
+                  Name, Location, Distance From You, and Directions. The directions column will hold a button 
+                  that redirects customers to google maps with the address of the location inputted into google maps.
+               </dd>
             <dt>setDivForTable()</dt>
-            <dd>
-               This Function takes in one string. It takes in the div id of where you want to place the table 
-               on your page when the search button is clicked. 
-            </dd>
+               <dd>
+                  This Function takes in one string. It takes in the div id of where you want to place the table 
+                  on your page when the search button is clicked. 
+               </dd>
           </dl>
       </p>
     </div>
+    <div id= "round-container">
+       <h2>Try it out!</h2>
+       <p>
+          Enter a valid postal code, city, or address and use the slider to select the range to search within. Once you hit the 
+          search icon you should see the Home Depot locations sorted in ascending distance from your location. You may go add your
+          own locations in examples.js to test the storefinder further.
+       </p>
+    </div>
+    <div id = "round-container2"></div>
 
 
  </body>
