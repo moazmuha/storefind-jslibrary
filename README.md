@@ -40,6 +40,8 @@ There are only 3 functions a user of storeFind library accessess. They are:
 ![image](https://user-images.githubusercontent.com/66569506/116297297-20492000-a769-11eb-91ac-cabb81ccfbf2.png)
 ![image](https://user-images.githubusercontent.com/66569506/116296702-88e3cd00-a768-11eb-98d8-0c86c9aa8574.png)
 ![image](https://user-images.githubusercontent.com/66569506/116296739-939e6200-a768-11eb-8609-babe58fcf922.png)
+![storefind](https://user-images.githubusercontent.com/66569506/116784997-3b67a880-aa65-11eb-8bdd-9f1870becc2b.gif)
+
 
 ## Notes
 •Contributions and suggestions are welcome. If you would like to contribute, please message me or open an issue.
